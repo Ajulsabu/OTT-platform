@@ -1,0 +1,96 @@
+{% extends 'dashboard/index1.html' %}
+{% load static %}
+{% block content %}
+
+<head>
+    <style>
+        body {
+            background-color: rgb(249, 252, 251);
+        }
+
+        table,
+        th,
+        td {
+            border: 1px solid rgb(0, 0, 0);
+        }
+
+        tr:nth-child(odd) {
+            background-color: #fcf9f9;
+        }
+
+        th {
+            background-color: rgb(234, 233, 240);
+        }
+    </style>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DETAILS</title>
+</head>
+
+<body>
+    <form method="POST" action="{% url 'get' %}">
+		{% csrf_token %}
+			<input type="text" name="Title" placeholder="Search">
+            <button class="btn btn-sidebar">
+                <i class="fas fa-search fa-fw"></i>
+            </button>
+	</form>
+
+    <table style="width:100%">
+        <h2>
+            <center>Programs</center>
+        </h2>
+        <tr>
+                </form>
+                <br>
+                    <th style="width: 2%;"><b>id</b></th>
+                    <th style="width: 10%;"><b>Title</b></th>
+                    <th style="width: 5%;"><b>Episode</b></th>
+                    <th style="width: 7%;"><b>videourl</b></th>
+                    <th style="width: 15%;"><b>image</b></th>
+                    <th><b>videos</b></th>
+                    <th style="width: 12%;"><b>category</b></th>
+                    <th style="width: 7%;"><b>Edit</b></th>
+                    <th style="width: 7%;"><b>Delete</b></th>
+        </tr>
+        {% for i in data %}
+        <tr>
+            <td>
+                {{i.id}}
+            </td>
+            <td>
+                {{i.title}}
+            </td>
+            <td>
+                {{i.Episode}}
+            </td>
+            <td>
+                {{i.videourl}}
+            </td>
+            <td>
+                <img src="{{i.image.url}}" style="height: 100%; width:100%;">
+            </td>
+            <td>
+                <video style="height: 100%; width:100%;" controls>
+                    <source src='{{i.Video.url}}' type='video/mp4'>
+                  
+                  </video>
+            </td>
+            <td>
+                {{i.ca}}
+            </td>
+            <td>
+                <a href="{% url 'upd' userid=i.id %}">Edit</a>
+            </td>
+            <td>
+                <a href="{% url 'del' userid=i.id %}">Delete</a>
+            </td>
+        </tr>
+        {% endfor %}
+        </center>
+    </table>
+</body>
+
+{% endblock %}

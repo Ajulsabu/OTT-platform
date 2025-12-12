@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Anime Template">
+    <meta name="keywords" content="Anime, unica, creative, html">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Anime | Template</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+
+    <!-- Css Styles -->
+    <link rel="stylesheet" href="static/css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="static/css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="static/css/elegant-icons.css" type="text/css">
+    <link rel="stylesheet" href="static/css/plyr.css" type="text/css">
+    <link rel="stylesheet" href="static/css/nice-select.css" type="text/css">
+    <link rel="stylesheet" href="static/css/owl.carousel.min.css" type="text/css">
+    <link rel="stylesheet" href="static/css/slicknav.min.css" type="text/css">
+    <link rel="stylesheet" href="static/css/style.css" type="text/css">
+</head>
+
+<body>
+    <section class="pricing-section spad">
+
+        <div class="container">
+
+            <body>
+
+                <div
+                    style="width:100vw;height:100vh;position: fixed;top: 0px;left: 0px;background-color: rgba(0,0,0,.4);z-index: 999;display: flex;justify-content: center;align-items: center;">
+
+                    <div class="container mt-n10 modalappoin">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <!-- Default Bootstrap Form Controls-->
+                                <div id="default">
+                                    <div class="card mb-4 cardone">
+
+                                        <div
+                                            style="width: 100%;height: 40px;background-color: #1003c2;text-align: center;color: #fff;font-family: 'RobotoBold';text-transform: uppercase;font-size: 14px;display: flex;justify-content: center;align-items: center;position: relative;">
+                                            <span><b>Purchase Now</b></span>
+                                            <a href="pur"
+                                                style="color:rgba(201, 6, 6, 0.986);position: absolute;right:10px;top:5px;font-size: 16px;">
+                                                <span class="close">&times;</span>
+                                            </a>
+                                        </div>
+
+                                        <div class="card-body">
+                                            <!-- Component Preview-->
+                                            <div class="sbp-preview">
+                                                <div class="sbp-preview-content">
+                                                    <form action="{% url 'pur' %}" method="POST" style="width: 100%;padding:20px 40px;"> 
+                                                        {% csrf_token %}
+                                                        <div class="row">
+                                                            <div>
+                                                                <p>
+                                                                    Name of Category: {{data2.caname}}
+                                                                </p>
+                                                                <p>
+                                                                    Price of Category: {{data2.price}}
+                                                                </p>
+                                                                <p>
+                                                                    Validity Date: {{data2.valid}}
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                        <h3 class="text-center"><b>Personal Details</b></h3></br>
+                                                        <div class="row">
+                                                           
+                                                            <div>
+                                                                <div class="form-group">
+                                                                    <label for="exampleFormControlInput1">Phone
+                                                                        Number</label>
+                                                                    <input class="form-control"
+                                                                        id="exampleFormControlInput1" type="number"
+                                                                        name="mob" value="{{request.user.mob}}"
+                                                                        placeholder=""></br>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label for="exampleFormControlInput1">Category
+                                                                        </label>
+                                                                    <input class="form-control"
+                                                                        id="exampleFormControlInput1" type="number"
+                                                                        name="cname" value="{{ data2.id }}"
+                                                                        placeholder=""></br>
+                                                                </div>
+                                                            </div>
+                                                            <div>
+                                                                <div class="form-group">
+                                                                    <label for="exampleFormControlInput1">Email</label>
+                                                                    <input class="form-control"
+                                                                        id="exampleFormControlInput1" type="email"
+                                                                        name="email" value="{{request.user.email}}"
+                                                                        placeholder="">
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-sm-12">
+                                                            </div>
+                                                        </div>
+                                                </div>
+                                                <center>
+                                                    <button type="submit">Pay with Razorpay</button>
+                                                </center>
+
+                                            </div>
+
+                                            </form>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                    <!-- Sticky Navigation-->
+
+                </div>
+        </div>
+
+        </div>
+        </div>
+    </section>
+
+    <!-- Footer Section Begin -->
+    <footer class="footer">
+        <div class="page-up">
+            <a href="#" id="scrollToTopButton"><span class="arrow_carrot-up"></span></a>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3">
+                    <div class="footer__logo">
+                        <a href="./index.html"><img src="static/img/logo.png" alt=""></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer Section End -->
+
+    <!-- Search model Begin -->
+    <div class="search-model">
+        <div class="h-100 d-flex align-items-center justify-content-center">
+            <div class="search-close-switch"><i class="icon_close"></i></div>
+            <form class="search-model-form">
+                <input type="text" id="search-input" placeholder="Search here.....">
+            </form>
+        </div>
+    </div>
+    <!-- Search model end -->
+
+    <!-- Js Plugins -->
+    <script src="static/js/jquery-3.3.1.min.js"></script>
+    <script src="static/js/bootstrap.min.js"></script>
+    <script src="static/js/player.js"></script>
+    <script src="static/js/jquery.nice-select.min.js"></script>
+    <script src="static/js/mixitup.min.js"></script>
+    <script src="static/js/jquery.slicknav.js"></script>
+    <script src="static/js/owl.carousel.min.js"></script>
+    <script src="static/js/main.js"></script>
+
+
+</body>
+
+</html>

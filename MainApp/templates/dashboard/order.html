@@ -1,0 +1,75 @@
+{% extends 'dashboard/index1.html' %}
+{% load static %}
+{% block content %}
+
+<head>
+    <style>
+        body {
+            background-color: rgb(249, 252, 251);
+        }
+
+        table,
+        th,
+        td {
+            border: 1px solid rgb(0, 0, 0);
+        }
+
+        tr:nth-child(odd) {
+            background-color: #f8f5f5;
+        }
+
+        th {
+            background-color: rgb(234, 233, 240);
+        }
+    </style>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>USER DETAILS</title>
+</head>
+
+<body>
+
+    <table style="width:100%">
+        <h2>
+            <center>Order Details</center>
+        </h2>
+        <tr>
+            </form>
+            <br>
+            <th><b>id</b></th>
+            <th><b>main category</b></th>
+            <th><b>email</b></th>
+            <th><b>Price</b></th>
+            <th><b>Validate</b></th>
+            <th><b>Date</b></th>
+        </tr>
+        {% for j in data %}
+        <tr>
+            <td>
+                {{j.id}}
+            </td>
+            <td>
+                {{j.ct}}
+            </td>
+            <td>
+                {{j.us}}
+            </td>
+            <td>
+                {{j.price}}
+            </td>
+            <td>
+                {{j.validity}}
+            </td>
+            <td>
+                {{j.date}}
+            </td>
+
+        </tr>
+        {% endfor %}
+        </center>
+    </table>
+</body>
+
+{% endblock %}

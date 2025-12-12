@@ -1,0 +1,69 @@
+{% extends 'dashboard/index1.html' %}
+{% load static %}
+{% block content %}
+
+<body class="img js-fullheight" style="background-image: url(static/images/slider_background.jpg);">
+    <section class="ftco-section">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-5 text-center mb-3">
+                    <center>
+                        <h2 class="heading-section">Add Programs</h2>
+                    </center>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-md-6 col-lg-4">
+                    <div class="login-wrap p-0">
+                        <form action="{% url 'pro' %}" method="post" class="signin-form" enctype="multipart/form-data">
+                            {% csrf_token %}
+                            <div class="form-group">
+                                <input type="text" class="form-control" name="Title" placeholder="Movie Name"
+                                    required>
+                            </div>
+                            <div class="form-group">
+                                <input type="number" class="form-control" name="Episode" placeholder="number of Episode"
+                                    required>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control" name="Videourl" placeholder="Video link" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="file" class="form-control" name="image" placeholder="Image of Movies" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="file" class="form-control" name="Video" placeholder="video of Movies" required>
+                            </div>
+                            <div>
+                                <div class="form-group">
+                                    <div class="form-control">
+                                        <select name="category" value="{{userdata.category}}" placeholder="category"
+                                            required>
+                                            {% for i in data %}
+                                            <option value="{{ i.id }}">{{i.cname}}</option>
+                                            {% endfor %}
+
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <button type="submit" class="form-control btn btn-primary submit px-3">Add</button>
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    {% endblock %}
+
+    <script src="static/log/js/jquery.min.js"></script>
+    <script src="static/log/js/popper.js"></script>
+    <script src="static/log/js/bootstrap.min.js"></script>
+    <script src="static/log/js/main.js"></script>
+
+</body>
+
+</html>

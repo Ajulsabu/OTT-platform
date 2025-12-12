@@ -1,0 +1,68 @@
+{% extends 'dashboard/index1.html' %}
+{% load static %}
+{% block content %}
+
+<body class="img js-fullheight" style="background-image: url(static/images/slider_background.jpg);">
+    <section class="ftco-section">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-5 text-center mb-3">
+                    <h2 class="heading-section">Add Categorys</h2>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-md-6 col-lg-4">
+                    <div class="login-wrap p-0">
+                        <form action="{% url 'adct' %}" method="post" class="signin-form" enctype="multipart/form-data">
+                            {% csrf_token %}
+                            <div class="form-group">
+                                <input type="text" class="form-control" name="cname" placeholder="Category Name"
+                                    required>
+                            </div>
+                            <div class="form-group">
+                                <input type="number" class="form-control" name="nos" placeholder="number of Movies"
+                                    required>
+                            </div>
+                            <div class="form-group">
+                                <input type="date" class="form-control" name="valid" placeholder="Expiry Date" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control" name="paid" placeholder="Paided or not"
+                                    required>
+                            </div>
+                            <div class="form-group">
+                                <input type="file" class="form-control" name="image" placeholder="Image of Movies"
+                                    required>
+                            </div>
+                            <div>
+                                <div class="form-group">
+                                    <div class="form-control">
+                                        <select name="maincategory" value="{{userdata.maincategory}}" placeholder="maincategory"
+                                            required>
+
+                                            {% for i in data %}
+                                            <option value="{{ i.id }}">{{i.caname}}</option>
+                                            {% endfor %}
+
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <button type="submit" class="form-control btn btn-primary submit px-3">Add</button>
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endblock %}
+    </section>
+
+    <script src="static/log/js/jquery.min.js"></script>
+    <script src="static/log/js/popper.js"></script>
+    <script src="static/log/js/bootstrap.min.js"></script>
+    <script src="static/log/js/main.js"></script>
+
+</body>

@@ -1,0 +1,61 @@
+{% extends 'dashboard/index1.html' %}
+{% load static %}
+{% block content %}
+<div class="col-md-5 text-center mb-3">
+
+</div>
+<center>
+    <h2 class="heading-section"><b>Update Program Details</b></h2>
+</center>
+<div class="row justify-content-center">
+
+    <div class="col-md-6 col-lg-4">
+        <div class="login-wrap p-0">
+            <form action="{% url 'upd' userid=id %}" method="post" enctype="multipart/form-data" class="signin-form">
+                {% csrf_token %}
+                <div class="form-group">
+                    <input type="text" class="form-control" name="Title" value="{{userdata.title}}" placeholder="Title"
+                        required>
+                </div>
+
+                <div class="form-group">
+                    <input type="text" class="form-control" name="Episode" value="{{userdata.Episode}}"
+                        placeholder="Episode" required>
+                </div>
+
+                <div class="form-group">
+                    <input type="text" class="form-control" name="video" value="{{userdata.videourl}}"
+                        placeholder="videourl" required>
+                </div>
+
+                <div class="form-group">
+                    <input type="file" class="form-control" name="image" value="{{userdata.image}}" placeholder="Image"
+                        required>
+                </div>
+                <div class="form-group">
+                    <input type="file" class="form-control" name="video"  value="{{userdata.video}}" placeholder="video of Movies"
+                        required>
+                </div>
+
+                <div>
+                    <div class="form-group">
+                        <div class="form-control">
+                            <select name="category" value="{{userdata.category}}" placeholder="Category" required>
+
+                                {% for i in data %}
+                                <option value="{{ i.id }}">{{i.cname}}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="form-control btn btn-primary submit px-3">Update</button>
+                </div>
+            </form>
+
+        </div>
+    </div>
+</div>
+</div>
+{% endblock %}

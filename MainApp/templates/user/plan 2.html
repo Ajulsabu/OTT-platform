@@ -1,0 +1,256 @@
+{% extends 'user/purchase.html' %}
+{% load static %}
+{% block content %}
+
+<head>
+	<link type="text/css" rel="stylesheet"
+		href="https://codex.nflxext.com/%5E3.0.0/truthBundle/webui/1.22.5-shakti-css-v5dc9899c/css/css/less%7Cpages%7Csignup%7Csimplicity%7Csimplicity.less/1/bouqx4wmpvgat/none/true/none"
+		data-uia="botLink">
+</head>
+
+<body>
+	<div id="appMountPoint">
+		<div class="netflix-sans-font-loaded">
+			<div class="basicLayout notMobile modernInApp hasLargeTypography signupSimplicity-planSelection simplicity"
+				lang="en-IN" dir="ltr">
+				<div class="simpleContainer" data-transitioned-child="true">
+					<div class="centerContainer narrowCenterContainer"
+						style="display: block; transform: none; opacity: 1; transition-duration: 250ms;">
+						<div class="planFormContainer" data-uia="form-plan-selection">
+							<div class="planGrid planGrid--has4Plans" data-uia="plan-grid">
+								<div class="planGrid__header">
+									<div class="planGrid__selector planGrid__planSelector" role="radiogroup"
+										aria-label="Plan" aria-describedby="planGrid_planChoice_description"
+										data-uia="plan-grid-plan-selector"><span class="planGrid__selectorDescription"
+											id="planGrid_planChoice_description"
+											data-uia="plan-grid-plan-selector+description" aria-hidden="true">Select the
+											plan you'd like</span><label
+											class="planGrid__selectorChoice planGrid__planChoice"
+											for="planGrid_planChoice_1"
+											data-uia="plan-grid-plan-selector+label-text_1_stream_name"><input
+												type="radio" name="planChoice"
+												class="planGrid__selectorInput planGrid__planInput"
+												id="planGrid_planChoice_1"
+												data-uia="plan-grid-plan-selector+input-text_1_stream_name"
+												value="314001031" checked=""><span
+												class="planGrid__selectorLabel planGrid__planLabel"><a href="{% url 'sub' pid=1 uid=0 %}">Basic</a></span></label><label
+											class="planGrid__selectorChoice planGrid__planChoice"
+											for="planGrid_planChoice_2"
+											data-uia="plan-grid-plan-selector+label-text_2_stream_name"><input
+												type="radio" name="planChoice"
+												class="planGrid__selectorInput planGrid__planInput"
+												id="planGrid_planChoice_2"
+												data-uia="plan-grid-plan-selector+input-text_2_stream_name"
+												value="10322"><span
+												class="planGrid__selectorLabel planGrid__planLabel"><a href="{% url 'sub' pid=2 uid=0 %}">Standard</a></span></label><label
+											class="planGrid__selectorChoice planGrid__planChoice"
+											for="planGrid_planChoice_3"
+											data-uia="plan-grid-plan-selector+label-text_4_stream_name"><input
+												type="radio" name="planChoice"
+												class="planGrid__selectorInput planGrid__planInput"
+												id="planGrid_planChoice_3"
+												data-uia="plan-grid-plan-selector+input-text_4_stream_name"
+												value="10341"><span
+												class="planGrid__selectorLabel planGrid__planLabel"><a href="{% url 'sub' pid=3 uid=0 %}">Premium</a></span></label>
+									</div>
+								</div>
+								<table class="planGrid__featureTable" role="table" data-uia="plan-grid-feature-table">
+									<caption class="planGrid__featureTableCaption">Netflix Plan Features</caption>
+									<tbody class="planGrid__featureTableBody" data-uia="plan-grid-feature-table-body">
+										<tr role="row"
+											class="planGrid__featureTableRow planGrid__featureTableRow--planPrice">
+											<td class="planGrid__cell planGrid__featureCell" role="cell"
+												data-uia="plan-grid-feature-table-cell+planPrice-feature">Monthly price
+											</td>
+											<td class="planGrid__cell planGrid__stringCell" role="cell"
+												data-uia="plan-grid-feature-table-cell+planPrice-text_1_stream_name"
+												aria-label="Mobile">₹&nbsp;400$</td>
+											<td class="planGrid__cell planGrid__stringCell" role="cell"
+												data-uia="plan-grid-feature-table-cell+planPrice-text_1_stream_name"
+												aria-label="Mobile">₹&nbsp;700$</td>
+											<td class="planGrid__cell planGrid__stringCell" role="cell"
+												data-uia="plan-grid-feature-table-cell+planPrice-text_1_stream_name"
+												aria-label="Mobile">₹&nbsp;1200$</td>
+										</tr>
+										<tr role="row"
+											class="planGrid__featureTableRow planGrid__featureTableRow--videoQuality">
+											<td class="planGrid__cell planGrid__featureCell" role="cell"
+												data-uia="plan-grid-feature-table-cell+videoQuality-feature">Video
+												quality</td>
+											<td class="planGrid__cell planGrid__cell--isSelected planGrid__videoQualityCell"
+												role="cell"
+												data-uia="plan-grid-feature-table-cell+videoQuality-text_1_stream_name"
+												aria-label="Basic">
+												<div class="planGrid__videoQualityLabel">Good</div>
+											</td>
+											<td class="planGrid__cell planGrid__videoQualityCell" role="cell"
+												data-uia="plan-grid-feature-table-cell+videoQuality-text_2_stream_name"
+												aria-label="Standard">
+												<div class="planGrid__videoQualityLabel">Better</div>
+											</td>
+											<td class="planGrid__cell planGrid__videoQualityCell" role="cell"
+												data-uia="plan-grid-feature-table-cell+videoQuality-text_4_stream_name"
+												aria-label="Premium">
+												<div class="planGrid__videoQualityLabel">Best</div>
+											</td>
+										</tr>
+										<tr role="row"
+											class="planGrid__featureTableRow planGrid__featureTableRow--resolution">
+											<td class="planGrid__cell planGrid__featureCell" role="cell"
+												data-uia="plan-grid-feature-table-cell+resolution-feature">Resolution
+											</td>
+											<td class="planGrid__cell planGrid__cell--isSelected planGrid__videoQualityCell"
+												role="cell"
+												data-uia="plan-grid-feature-table-cell+resolution-text_1_stream_name"
+												aria-label="Basic">
+												<div class="planGrid__videoQualityLabel">480p</div>
+											</td>
+											<td class="planGrid__cell planGrid__videoQualityCell" role="cell"
+												data-uia="plan-grid-feature-table-cell+resolution-text_2_stream_name"
+												aria-label="Standard">
+												<div class="planGrid__videoQualityLabel">1080p</div>
+											</td>
+											<td class="planGrid__cell planGrid__videoQualityCell" role="cell"
+												data-uia="plan-grid-feature-table-cell+resolution-text_4_stream_name"
+												aria-label="Premium">
+												<div class="planGrid__videoQualityLabel">4K+HDR</div>
+											</td>
+										</tr>
+										<tr role="row"
+											class="planGrid__featureTableRow planGrid__featureTableRow--supportedDevices">
+											<td class="planGrid__cell planGrid__featureCell" role="cell"
+												data-uia="plan-grid-feature-table-cell+supportedDevices-feature">Devices
+												you can use to watch</td>
+											<td class="planGrid__cell planGrid__cell--isSelected planGrid__supportedDevicesCell"
+												role="cell"
+												data-uia="plan-grid-feature-table-cell+supportedDevices-text_1_stream_name"
+												aria-label="Basic">
+												<div><svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+														xmlns="http://www.w3.org/2000/svg"
+														class="planGrid__supportedDevicesIcon" focusable="false">
+														<path fill-rule="evenodd" clip-rule="evenodd"
+															d="M6 0C4.89543 0 4 0.895431 4 2V22C4 23.1046 4.89543 24 6 24H18C19.1046 24 20 23.1046 20 22V2C20 0.89543 19.1046 0 18 0H6ZM6 2L18 2V22H6V2ZM13.5 18.5C13.5 17.6716 12.8284 17 12 17C11.1716 17 10.5 17.6716 10.5 18.5C10.5 19.3284 11.1716 20 12 20C12.8284 20 13.5 19.3284 13.5 18.5Z"
+															fill="currentColor"></path>
+													</svg>
+													<div class="planGrid__supportedDevicesLabel">Phone</div>
+												</div>
+												<div><svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+														xmlns="http://www.w3.org/2000/svg"
+														class="planGrid__supportedDevicesIcon" focusable="false">
+														<path fill-rule="evenodd" clip-rule="evenodd"
+															d="M2 3C0.895431 3 0 3.89543 0 5V19C0 20.1046 0.895431 21 2 21H22C23.1046 21 24 20.1046 24 19V5C24 3.89543 23.1046 3 22 3H2ZM2 5H22V19H2V5ZM18.5 13.5C19.3284 13.5 20 12.8284 20 12C20 11.1716 19.3284 10.5 18.5 10.5C17.6716 10.5 17 11.1716 17 12C17 12.8284 17.6716 13.5 18.5 13.5Z"
+															fill="currentColor"></path>
+													</svg>
+													<div class="planGrid__supportedDevicesLabel">Tablet</div>
+												</div>
+												<div><svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+														xmlns="http://www.w3.org/2000/svg"
+														class="planGrid__supportedDevicesIcon" focusable="false">
+														<path fill-rule="evenodd" clip-rule="evenodd"
+															d="M3.99997 3C2.8954 3 1.99997 3.89543 1.99997 5V14C1.99997 15.1046 2.8954 16 3.99997 16H20C21.1045 16 22 15.1046 22 14V5C22 3.89543 21.1045 3 20 3H3.99997ZM3.99997 5L20 5V14H3.99997V5ZM1.11859 20.6355C4.58689 20.2212 8.23466 20 12 20C15.7653 20 19.413 20.2212 22.8813 20.6355L23.1186 18.6497C19.5701 18.2257 15.8431 18 12 18C8.15686 18 4.42984 18.2257 0.881348 18.6497L1.11859 20.6355Z"
+															fill="currentColor"></path>
+													</svg>
+													<div class="planGrid__supportedDevicesLabel">Computer</div>
+												</div>
+												<div><svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+														xmlns="http://www.w3.org/2000/svg"
+														class="planGrid__supportedDevicesIcon" focusable="false">
+														<path fill-rule="evenodd" clip-rule="evenodd"
+															d="M2 3C0.895431 3 0 3.89543 0 5V14C0 15.1046 0.895431 16 2 16H22C23.1046 16 24 15.1046 24 14V5C24 3.89543 23.1046 3 22 3H2ZM2 5L22 5V14H2V5ZM2.1072 20.5232C5.27786 20.1813 8.59078 20 12 20C15.4092 20 18.7221 20.1813 21.8928 20.5232L22.1072 18.5347C18.8643 18.1851 15.4798 18 12 18C8.52024 18 5.13573 18.1851 1.8928 18.5347L2.1072 20.5232Z"
+															fill="currentColor"></path>
+													</svg>
+													<div class="planGrid__supportedDevicesLabel">TV</div>
+												</div>
+											</td>
+											<td class="planGrid__cell planGrid__supportedDevicesCell" role="cell"
+												data-uia="plan-grid-feature-table-cell+supportedDevices-text_2_stream_name"
+												aria-label="Standard">
+												<div><svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+														xmlns="http://www.w3.org/2000/svg"
+														class="planGrid__supportedDevicesIcon" focusable="false">
+														<path fill-rule="evenodd" clip-rule="evenodd"
+															d="M6 0C4.89543 0 4 0.895431 4 2V22C4 23.1046 4.89543 24 6 24H18C19.1046 24 20 23.1046 20 22V2C20 0.89543 19.1046 0 18 0H6ZM6 2L18 2V22H6V2ZM13.5 18.5C13.5 17.6716 12.8284 17 12 17C11.1716 17 10.5 17.6716 10.5 18.5C10.5 19.3284 11.1716 20 12 20C12.8284 20 13.5 19.3284 13.5 18.5Z"
+															fill="currentColor"></path>
+													</svg>
+													<div class="planGrid__supportedDevicesLabel">Phone</div>
+												</div>
+												<div><svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+														xmlns="http://www.w3.org/2000/svg"
+														class="planGrid__supportedDevicesIcon" focusable="false">
+														<path fill-rule="evenodd" clip-rule="evenodd"
+															d="M2 3C0.895431 3 0 3.89543 0 5V19C0 20.1046 0.895431 21 2 21H22C23.1046 21 24 20.1046 24 19V5C24 3.89543 23.1046 3 22 3H2ZM2 5H22V19H2V5ZM18.5 13.5C19.3284 13.5 20 12.8284 20 12C20 11.1716 19.3284 10.5 18.5 10.5C17.6716 10.5 17 11.1716 17 12C17 12.8284 17.6716 13.5 18.5 13.5Z"
+															fill="currentColor"></path>
+													</svg>
+													<div class="planGrid__supportedDevicesLabel">Tablet</div>
+												</div>
+												<div><svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+														xmlns="http://www.w3.org/2000/svg"
+														class="planGrid__supportedDevicesIcon" focusable="false">
+														<path fill-rule="evenodd" clip-rule="evenodd"
+															d="M3.99997 3C2.8954 3 1.99997 3.89543 1.99997 5V14C1.99997 15.1046 2.8954 16 3.99997 16H20C21.1045 16 22 15.1046 22 14V5C22 3.89543 21.1045 3 20 3H3.99997ZM3.99997 5L20 5V14H3.99997V5ZM1.11859 20.6355C4.58689 20.2212 8.23466 20 12 20C15.7653 20 19.413 20.2212 22.8813 20.6355L23.1186 18.6497C19.5701 18.2257 15.8431 18 12 18C8.15686 18 4.42984 18.2257 0.881348 18.6497L1.11859 20.6355Z"
+															fill="currentColor"></path>
+													</svg>
+													<div class="planGrid__supportedDevicesLabel">Computer</div>
+												</div>
+												<div><svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+														xmlns="http://www.w3.org/2000/svg"
+														class="planGrid__supportedDevicesIcon" focusable="false">
+														<path fill-rule="evenodd" clip-rule="evenodd"
+															d="M2 3C0.895431 3 0 3.89543 0 5V14C0 15.1046 0.895431 16 2 16H22C23.1046 16 24 15.1046 24 14V5C24 3.89543 23.1046 3 22 3H2ZM2 5L22 5V14H2V5ZM2.1072 20.5232C5.27786 20.1813 8.59078 20 12 20C15.4092 20 18.7221 20.1813 21.8928 20.5232L22.1072 18.5347C18.8643 18.1851 15.4798 18 12 18C8.52024 18 5.13573 18.1851 1.8928 18.5347L2.1072 20.5232Z"
+															fill="currentColor"></path>
+													</svg>
+													<div class="planGrid__supportedDevicesLabel">TV</div>
+												</div>
+											</td>
+											<td class="planGrid__cell planGrid__supportedDevicesCell" role="cell"
+												data-uia="plan-grid-feature-table-cell+supportedDevices-text_4_stream_name"
+												aria-label="Premium">
+												<div><svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+														xmlns="http://www.w3.org/2000/svg"
+														class="planGrid__supportedDevicesIcon" focusable="false">
+														<path fill-rule="evenodd" clip-rule="evenodd"
+															d="M6 0C4.89543 0 4 0.895431 4 2V22C4 23.1046 4.89543 24 6 24H18C19.1046 24 20 23.1046 20 22V2C20 0.89543 19.1046 0 18 0H6ZM6 2L18 2V22H6V2ZM13.5 18.5C13.5 17.6716 12.8284 17 12 17C11.1716 17 10.5 17.6716 10.5 18.5C10.5 19.3284 11.1716 20 12 20C12.8284 20 13.5 19.3284 13.5 18.5Z"
+															fill="currentColor"></path>
+													</svg>
+													<div class="planGrid__supportedDevicesLabel">Phone</div>
+												</div>
+												<div><svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+														xmlns="http://www.w3.org/2000/svg"
+														class="planGrid__supportedDevicesIcon" focusable="false">
+														<path fill-rule="evenodd" clip-rule="evenodd"
+															d="M2 3C0.895431 3 0 3.89543 0 5V19C0 20.1046 0.895431 21 2 21H22C23.1046 21 24 20.1046 24 19V5C24 3.89543 23.1046 3 22 3H2ZM2 5H22V19H2V5ZM18.5 13.5C19.3284 13.5 20 12.8284 20 12C20 11.1716 19.3284 10.5 18.5 10.5C17.6716 10.5 17 11.1716 17 12C17 12.8284 17.6716 13.5 18.5 13.5Z"
+															fill="currentColor"></path>
+													</svg>
+													<div class="planGrid__supportedDevicesLabel">Tablet</div>
+												</div>
+												<div><svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+														xmlns="http://www.w3.org/2000/svg"
+														class="planGrid__supportedDevicesIcon" focusable="false">
+														<path fill-rule="evenodd" clip-rule="evenodd"
+															d="M3.99997 3C2.8954 3 1.99997 3.89543 1.99997 5V14C1.99997 15.1046 2.8954 16 3.99997 16H20C21.1045 16 22 15.1046 22 14V5C22 3.89543 21.1045 3 20 3H3.99997ZM3.99997 5L20 5V14H3.99997V5ZM1.11859 20.6355C4.58689 20.2212 8.23466 20 12 20C15.7653 20 19.413 20.2212 22.8813 20.6355L23.1186 18.6497C19.5701 18.2257 15.8431 18 12 18C8.15686 18 4.42984 18.2257 0.881348 18.6497L1.11859 20.6355Z"
+															fill="currentColor"></path>
+													</svg>
+													<div class="planGrid__supportedDevicesLabel">Computer</div>
+												</div>
+												<div><svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+														xmlns="http://www.w3.org/2000/svg"
+														class="planGrid__supportedDevicesIcon" focusable="false">
+														<path fill-rule="evenodd" clip-rule="evenodd"
+															d="M2 3C0.895431 3 0 3.89543 0 5V14C0 15.1046 0.895431 16 2 16H22C23.1046 16 24 15.1046 24 14V5C24 3.89543 23.1046 3 22 3H2ZM2 5L22 5V14H2V5ZM2.1072 20.5232C5.27786 20.1813 8.59078 20 12 20C15.4092 20 18.7221 20.1813 21.8928 20.5232L22.1072 18.5347C18.8643 18.1851 15.4798 18 12 18C8.52024 18 5.13573 18.1851 1.8928 18.5347L2.1072 20.5232Z"
+															fill="currentColor"></path>
+													</svg>
+													<div class="planGrid__supportedDevicesLabel">TV</div>
+												</div>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+{% endblock %}

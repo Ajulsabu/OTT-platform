@@ -1,0 +1,61 @@
+{% extends 'dashboard/index1.html' %}
+{% load static %}
+{% block content %}
+
+<head>
+<style>
+    body {
+        background-color: rgb(249, 252, 251);
+    }
+
+    table,
+    th,
+    td {
+        border: 1px solid rgb(0, 0, 0);
+    }
+
+    tr:nth-child(odd) {
+        background-color: #fcf9f9;
+    }
+
+    th {
+        background-color: rgb(234, 233, 240);
+    }
+</style>
+</head>
+<body>
+    <table style="width:100%" >
+        <h2>
+            <center>categories</center>
+        </h2>
+        <tr>
+            <br>
+            <th style="width: 16%;"><b>category name</b></th>
+            <th style="width: 16%;"><b>NO. of movies</b></th>
+            <th style="width: 16%;"><b>validity</b></th>
+            <th style="width: 16%;"><b>paid or not</b></th>
+            <th><b>image</b></th>
+        </tr>
+        {% for k in data %}
+        <tr>
+            <td>
+                {{k.cname}}
+            </td>
+            <td>
+                {{k.nos}}
+            </td>
+            <td>
+                {{k.valid}}
+            </td>
+            <td>
+                {{k.paid}}
+            </td>
+            <td>
+                <img src="{{k.image.url}}" style="height: 10%; width:20%;">
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+
+{% endblock %}
